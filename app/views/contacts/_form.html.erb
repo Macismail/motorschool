@@ -1,0 +1,28 @@
+<%= form_for @contact do |f| %>
+  <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+    <%= f.text_field :name, class: "input100",  placeholder: "Full Name", required: true %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 validate-input" data-validate = "Please enter your email: e@a.x">
+    <%= f.email_field :email, class: "input100", placeholder: "E-mail", required: true %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 validate-input" data-validate = "Please enter your phone">
+    <%= f.text_field :contact, class: "input100", placeholder: "Phone", required: true %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="wrap-input100 validate-input" data-validate = "Please enter your message">
+    <%= f.text_area :message, class:"input100", placeholder: "Your Message", required: true %>
+    <span class="focus-input100"></span>
+  </div>
+
+  <div class="container-contact100-form-btn">
+    <%= f.submit 'send Message', class:"contact100-form-btn btn-outline-primary" %>
+      <span>
+        <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+      </span>
+  </div>
+<% end %>
