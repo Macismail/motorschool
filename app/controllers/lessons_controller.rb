@@ -5,8 +5,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @user = User.find(params[:user_id])
-    @lessons = @user.lessons
+    @lessons = current_user.lessons
   end
 
   # GET /lessons/1
@@ -24,11 +23,11 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = current_user.lessons.buildlesson_params
+    @lesson = current_user.lessons.build(lesson_params)
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to user_lessons_path(current_user, @lesson), notice: 'Lesson was successfully created.' }
+        format.html { redirect_to user_lesson_path(current_user, @lesson), notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new }
@@ -42,7 +41,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
+        format.html { redirect_to user_lesson_path(@lesson), notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
