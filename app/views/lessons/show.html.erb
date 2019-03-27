@@ -1,0 +1,36 @@
+<h1>lesson details</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>L date:</strong>
+  <%= @lesson.l_date %>
+</p>
+
+<p>
+  <strong>L time:</strong>
+  <%= @lesson.l_time %>
+</p>
+
+<p>
+  <strong>N lesson:</strong>
+  <%= @lesson.n_lesson %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @lesson.duration %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @lesson.instructor %>
+</p>
+
+<%= link_to 'Edit', edit_user_lesson_path(@lesson) %> |
+<%= link_to 'Back', user_lessons_path %>

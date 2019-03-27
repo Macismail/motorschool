@@ -8,26 +8,29 @@
     <div class="collapse navbar-collapse" id="navbarsExample03">
       <ul class="navbar-nav ml-md-auto">
         <li class="nav-item">
-          <b><%= link_to 'Instructors', class:'nav-link' %></b>
+          <b><%= link_to ' ', class:'nav-link' %></b>
         </li>
 
+        <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Learners', class:"nav-link" %>
+          <%= link_to 'lessons', user_lessons_path(current_user), class:"nav-link" %>
         </li>
+        <%  end %>
+
         <li class="nav-item">
           <%= link_to 'Contact us', contacts_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'About', class:"nav-link" %>
+          <%= link_to ' ', class:"nav-link" %>
         </li>
         <% if !current_user %>
-        <li class="nav-item">
-          <%= link_to 'My Account', new_user_session_path, class:"nav-link" %>
-        </li>
+          <li class="nav-item">
+            <%= link_to 'My Account', new_user_session_path, class:"nav-link" %>
+          </li>
         <% else %>
-        <li class="nav-item">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"nav-link" %>
-        </li>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class:"nav-link" %>
+          </li>
         <% end %>
       </ul>
 

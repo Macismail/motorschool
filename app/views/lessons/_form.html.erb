@@ -1,0 +1,47 @@
+<%= form_with(model: [current_user, lesson], local: true) do |form| %>
+  <% if lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+      <% lesson.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :l_date %>
+    <%= form.date_select :l_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :l_time %>
+    <%= form.time_select :l_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_lesson %>
+    <%= form.number_field :n_lesson %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.number_field :duration %><p> hours</p>
+  </div>
+
+  <div class="field">
+    <%= form.label :instructor %>
+    <%= form.text_field :instructor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
