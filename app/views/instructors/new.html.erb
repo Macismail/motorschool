@@ -1,0 +1,16 @@
+
+<div class="container">
+  <h1 class="text-center">New Instructor</h1><br>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="jumbotron text-center">
+
+      <%= link_to 'Back', instructors_path, class:'btn btn-outline-primary btn-sm'  %>
+        <hr><br>
+      <%= render 'form', instructor: @instructor %>
+
+      </div>
+    </div>
+  </div>
+</div>

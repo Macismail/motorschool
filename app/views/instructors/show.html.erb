@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <div class="jumbotron">
+
+        <h2>Instructor Details</h2><hr>
+
+        <p id="notice"><%= notice %></p>
+
+        <p>
+          <strong>Full name:</strong>
+          <%= @instructor.full_name %>
+        </p>
+
+        <p>
+          <strong>Phone n:</strong>
+          <%= @instructor.phone_n %>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <%= @instructor.email %>
+        </p>
+
+        <p>
+          <strong>Category:</strong>
+          <%= @instructor.category %>
+        </p>
+
+        <%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+        <%= link_to 'Back', instructors_path %>
+
+      </div>
+    </div>
+  </div>
+</div>
