@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'better_errors', '~> 2.5', '>= 2.5.1'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'bootstrap-datepicker-rails'
 gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'mail_form', '~> 1.7', '>= 1.7.1'

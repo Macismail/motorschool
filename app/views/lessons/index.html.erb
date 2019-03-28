@@ -3,6 +3,9 @@
   <h4 class="text-center" id="notice"><%= notice %></h4>
   <div class="text-center">
     <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary sm' %>
+    <%= form_for '', url: user_lessons_path, role: 'search', method: :get do %>
+      <%= text_field_tag :search, @search_term, placeholder:'search ...' %>
+    <% end %>
   </div><br>
 
   <div class="row">
