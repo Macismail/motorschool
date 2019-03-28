@@ -1,12 +1,15 @@
 <div class="container">
-  <h1 class="text-center">New Lesson</h1><hr>
+  <h1 class="text-center">New Lesson</h1><br>
   <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
+      <div class="jumbotron">
+
+      <%= link_to 'Back', user_lessons_path, class:'btn btn-outline-primary btn-sm'  %>
+        <hr><br>
       <%= render 'form', lesson: @lesson %>
 
-      <%= link_to 'Back', user_lessons_path %>
+      </div>
     </div>
   </div>
-
 </div>

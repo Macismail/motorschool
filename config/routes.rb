@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'contacts/index'
   get 'contacts/create'
-  get 'lessons/index'
-  get 'lessons/show'
-  get 'lessons/new'
-  get 'lessons/edit'
 
   resources :users do
     resources :lessons

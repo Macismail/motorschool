@@ -1,6 +1,16 @@
-<h1>Editing Lesson</h1>
+<div class="container">
+  <h1 class="text-center">Update Lesson</h1><br>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="jumbotron">
 
-<%= render 'form', lesson: @lesson %>
+      <%= link_to 'Show', user_lesson_path(current_user, @lesson), class:'btn btn-outline-primary btn-sm' %>
+      <%= link_to 'Back', user_lessons_path, class:'btn btn-outline-primary btn-sm' %>
+      <hr><br>
+      <%= render 'form', lesson: @lesson %>
 
-<%= link_to 'Show', edit_user_lesson_url(@lesson) %> |
-<%= link_to 'Back', user_lessons_path %>
+      </div>
+    </div>
+  </div>
+</div>

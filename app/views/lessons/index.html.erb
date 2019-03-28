@@ -3,9 +3,6 @@
   <h4 class="text-center" id="notice"><%= notice %></h4>
   <div class="text-center">
     <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary sm' %>
-    <%= form_for '', url: user_lessons_path, role: 'search', method: :get do %>
-      <%= text_field_tag :search, @search_term, placeholder:'search ...' %>
-    <% end %>
   </div><br>
 
   <div class="row">
@@ -17,7 +14,6 @@
           <p><b>lesson date: </b><%= lesson.l_date %></p>
           <p><b>time: </b><%= lesson.l_time.to_formatted_s(:time) %></p>
           <p><b>lesson duration: </b><%= lesson.duration %></p>
-          <p><b>Hours left: </b><%= lesson.n_lesson %></p>
           <p><b>instructor: </b><%= lesson.instructor %></p>
           <div class="btn-group">
             <%= link_to 'Show', user_lesson_path(current_user, lesson), class:'btn btn-outline-primary sm' %>
