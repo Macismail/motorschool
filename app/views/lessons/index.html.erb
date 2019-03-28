@@ -1,35 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Lessons</h1><hr>
+  <h4 class="text-center" id="notice"><%= notice %></h4>
+  <div class="text-center">
+    <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary sm' %>
+  </div><br>
 
-<h1>Lessons</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>L date</th>
-      <th>L time</th>
-      <th>N lesson</th>
-      <th>Duration</th>
-      <th>Instructor</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="row">
     <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.l_date %></td>
-        <td><%= lesson.l_time %></td>
-        <td><%= lesson.n_lesson %></td>
-        <td><%= lesson.duration %></td>
-        <td><%= lesson.instructor %></td>
-        <td><%= link_to 'Show', user_lesson_path(current_user, lesson) %></td>
-        <td><%= link_to 'Edit', edit_user_lesson_path(current_user, lesson) %></td>
-        <td><%= link_to 'Destroy', user_lesson_path(current_user, lesson), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="col-4">
+      <div class="card bg-light rounded" style="width:300px">
+        <div class="card-body text-center">
+          <h4 class="card-title">Lesson Details</h4><br>
+          <p><b>lesson date: </b><%= lesson.l_date %></p>
+          <p><b>time: </b><%= lesson.l_time.to_formatted_s(:time) %></p>
+          <p><b>lesson duration: </b><%= lesson.duration %></p>
+          <p><b>Hours left: </b><%= lesson.n_lesson %></p>
+          <p><b>instructor: </b><%= lesson.instructor %></p>
+          <div class="btn-group">
+            <%= link_to 'Show', user_lesson_path(current_user, lesson), class:'btn btn-outline-primary sm' %>
+            <%= link_to 'Edit', edit_user_lesson_path(current_user, lesson), class:'btn btn-outline-primary sm' %>
+            <%= link_to 'Destroy', user_lesson_path(current_user, lesson), class:'btn btn-outline-primary sm', method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div><br>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div><br>
 
-<br>
-
-<%= link_to 'New Lesson', new_user_lesson_path %>
+</div>
