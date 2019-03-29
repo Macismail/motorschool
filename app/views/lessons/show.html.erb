@@ -1,36 +1,29 @@
-<h1>lesson details</h1>
 
-<p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <div class="jumbotron text-center">
+        <h2>lesson details</h2><hr>
 
-<p>
-  <strong>User:</strong>
-  <%= current_user.email %>
-</p>
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>L date:</strong>
-  <%= @lesson.l_date %>
-</p>
+        <div class="btn-group">
+          <%= link_to 'Edit', edit_user_lesson_path(@lesson), class:'btn btn-outline-primary btn-sm' %>
+          <%= link_to 'Back', user_lessons_path, class:'btn btn-outline-primary btn-sm' %>
+        </div>
+        <br><br>
+        <p> <b>User email:</b> <%= current_user.email %> </p>
 
-<p>
-  <strong>L time:</strong>
-  <%= @lesson.l_time.to_formatted_s(:time) %>
-</p>
+        <p> <b>Lesson date:</b> <%= @lesson.l_date %> </p>
 
-<p>
-  <strong>N lesson:</strong>
-  <%= @lesson.n_lesson %>
-</p>
+        <p> <b>time:</b> <%= @lesson.l_time.to_formatted_s(:time) %> </p>
 
-<p>
-  <strong>Duration:</strong>
-  <%= @lesson.duration %>
-</p>
+        <p> <b>Nnmber of lessons:</b> <%= @lesson.n_lesson %> </p>
 
-<p>
-  <strong>Instructor:</strong>
-  <%= @lesson.instructor %>
-</p>
+        <p> <b>Duration:</b> <%= @lesson.duration %> </p>
 
-<%= link_to 'Edit', edit_user_lesson_path(@lesson) %> |
-<%= link_to 'Back', user_lessons_path %>
+        <p> <b>Instructor:</b> <%= @lesson.instructor %> </p>
+
+      </div>
+    </div>
+  </div>
