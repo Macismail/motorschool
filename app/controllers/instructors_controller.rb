@@ -7,7 +7,7 @@ class InstructorsController < ApplicationController
     @instructors = if params[:search].blank?
                      Instructor.all
                    else
-                     Instructor.where('full_name LIKE ?', "%#{params[:search]}%")
+                     Instructor.where('LOWER(full_name) LIKE ?', "%#{params[:search].downcase}%")
                    end
   end
 
