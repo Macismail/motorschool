@@ -1,16 +1,16 @@
-<div class="container">
-  <h1>Lessons</h1><hr>
+
+  <h2>Lessons</h2><hr>
   <h4 class="text-center" id="notice"><%= notice %></h4>
   <div class="text-center">
     <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary sm' %>
   </div><br>
-
+  <% n = 1 %>
   <div class="row">
     <% @lessons.each do |lesson| %>
     <div class="col-4">
       <div class="card bg-light rounded" style="width:300px">
         <div class="card-body text-center">
-          <h4 class="card-title">Lesson Details</h4><br>
+          <h4 class="card-title"><%= current_user.f_name %> Lesson <%= n %></h4><br>
           <p><b>lesson date: </b><%= lesson.l_date %></p>
           <p><b>time: </b><%= lesson.l_time.to_formatted_s(:time) %></p>
           <p><b>lesson duration: </b><%= lesson.duration %></p>
@@ -23,7 +23,6 @@
         </div>
       </div><br>
     </div>
+    <% n = n+1 %>
     <% end %>
-  </div><br>
-
-</div>
+  </div>
