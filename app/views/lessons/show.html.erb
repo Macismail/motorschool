@@ -18,11 +18,15 @@
 
         <p> <b>time:</b> <%= @lesson.l_time.to_formatted_s(:time) %> </p>
 
-        <p> <b>Nnmber of lessons:</b> <%= @lesson.n_lesson %> </p>
-
         <p> <b>Duration:</b> <%= @lesson.duration %> </p>
 
+        <p> <b>Total Hours:</b> <%= @lesson.n_lesson %> </p>
+
+        <p> <b>Remaining Hours:</b> <%= @remaining_h %> </p>
+
         <p> <b>Instructor:</b> <%= @lesson.instructor %> </p>
+
+        <p> <b>Total Price:</b> <%= @total_p %> €</p>
 
       </div>
     </div>

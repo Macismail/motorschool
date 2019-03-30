@@ -1,8 +1,9 @@
 
-  <h2>Lessons</h2><hr>
+  <h2 class="text-center"><%= current_user.f_name %> Lessons</h2><hr>
   <h4 class="text-center" id="notice"><%= notice %></h4>
-  <div class="text-center">
-    <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary sm' %>
+  <div class="row">
+    <div class="col-10"></div>
+    <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary btn-sm' %>
   </div><br>
   <% n = 1 %>
   <div class="row">
@@ -10,7 +11,7 @@
     <div class="col-4">
       <div class="card bg-light rounded" style="width:300px">
         <div class="card-body text-center">
-          <h4 class="card-title"><%= current_user.f_name %> Lesson <%= n %></h4><br>
+          <h4 class="card-title">Lesson <%= n %></h4><br>
           <p><b>lesson date: </b><%= lesson.l_date %></p>
           <p><b>time: </b><%= lesson.l_time.to_formatted_s(:time) %></p>
           <p><b>lesson duration: </b><%= lesson.duration %></p>
