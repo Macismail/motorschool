@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   # before_action :set_post, only: [:index, :create]
   # before_action :authenticate_user!, except: %i[show index]
   # rails g migrate add_user_id_to_lessons user_id:integer
+  # before_filter :authenticate_user! before_filter :ensure_admin, :only => [:edit, :destroy]
   def index
     @contact = Contact.new
   end
