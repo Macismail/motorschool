@@ -4,7 +4,9 @@
   <h1 class="text-center">Instructors</h1><br>
   <div class="row">
     <div class="col-7">
+      <% if user_signed_in? && current_user.admin %>
       <%= link_to 'New Instructor', new_instructor_path, class:'btn btn-outline-primary btn-sm' %>
+      <% end %>
     </div>
     <div class="col-5">
       <%= form_tag instructors_path, method: :get do %>
@@ -34,7 +36,7 @@
           <td><%= instructor.category %></td>
           <div class="btn-group">
             <td><%= link_to 'Show', instructor, class:'btn btn-outline-primary btn-sm' %></td>
-            <% if user_signed_in? && current_user.email == instructor.email %>
+            <% if user_signed_in? && (current_user.email == instructor.email || current_user.admin) %>
             <td><%= link_to 'Edit', edit_instructor_path(instructor), class:'btn btn-outline-primary btn-sm' %></td>
             <td><%= link_to 'Destroy', instructor, class:'btn btn-outline-primary btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
