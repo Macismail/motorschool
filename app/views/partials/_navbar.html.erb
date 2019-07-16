@@ -7,9 +7,11 @@
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
       <ul class="navbar-nav md-auto"> <!--  menu left chage to ml-md-auto -->
+        <% if user_signed_in? && current_user.email == 'admin@gmail.com' %>
         <li class="nav-item">
-          <b><%= link_to '', instructors_path, class:'nav-link' %></b>
+          <b><%= link_to 'instructors', instructors_path, class:'nav-link' %></b>
         </li>
+        <%  end %>
 
         <% if user_signed_in? %>
         <li class="nav-item">
