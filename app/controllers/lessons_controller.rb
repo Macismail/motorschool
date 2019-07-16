@@ -5,7 +5,12 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = current_user.lessons
+    # @lessons = current_user.lessons
+    @lessons = if params[:search].blank?
+                 current_user.lessons
+               else
+                 current_user.lessons.where('LOWER(full_name) LIKE ?', "%#{params[:search].downcase}%")
+               end
   end
 
   # GET /lessons/1
@@ -73,6 +78,6 @@ class LessonsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def lesson_params
-    params.require(:lesson).permit(:l_date, :l_time, :n_lesson, :duration, :instructor, :user_id)
+    params.require(:lesson).permit(:full_name, :l_date, :l_time, :n_lesson, :duration, :instructor, :user_id)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_01_190240) do
+ActiveRecord::Schema.define(version: 2019_07_16_100833) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_04_01_190240) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "full_name"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
@@ -49,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_190240) do
     t.string "f_name"
     t.string "l_name"
     t.string "phone_n"
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

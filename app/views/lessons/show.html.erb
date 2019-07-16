@@ -12,6 +12,8 @@
           <%= link_to 'Back', user_lessons_path, class:'btn btn-outline-primary btn-sm' %>
         </div>
         <br><br>
+        <p> <b>Learner name:</b> <%= @lesson.full_name %> </p>
+
         <p> <b>User email:</b> <%= current_user.email %> </p>
 
         <p> <b>Lesson date:</b> <%= @lesson.l_date %> </p>
@@ -24,7 +26,7 @@
 
         <p> <b>Remaining Hours:</b> <%= @remaining_h %> </p>
 
-        <p> <b>Instructor:</b> <%= @lesson.instructor %> </p>
+        <p> <b></b> <% @lesson.instructor %> </p>
 
         <p> <b>Total Price:</b> <%= @total_p %> €</p>
 

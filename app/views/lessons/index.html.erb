@@ -2,8 +2,16 @@
   <h2 class="text-center"><%= current_user.f_name %> Lessons</h2><hr>
   <h4 class="text-center" id="notice"><%= notice %></h4>
   <div class="row">
-    <div class="col-10"></div>
-    <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary btn-sm' %>
+    <div class="col-1"></div>
+    <div class="col-4">
+      <%= link_to 'New Lesson', new_user_lesson_path, class:'btn btn-outline-primary btn-sm' %>
+    </div>
+    <div class="col-6">
+      <%= form_tag user_lessons_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Learner Name..." %>
+        <%= submit_tag "Search", class:'btn btn-outline-primary btn-sm' %>
+      <% end %>
+    </div>
   </div><br>
   <% n = 1 %>
   <div class="row">
@@ -12,10 +20,11 @@
       <div class="card bg-light rounded" style="width:300px">
         <div class="card-body text-center">
           <h4 class="card-title">Lesson <%= n %></h4><br>
+          <p><b>leerner name: </b><%= lesson.full_name %></p>
           <p><b>lesson date: </b><%= lesson.l_date %></p>
           <p><b>time: </b><%= lesson.l_time.to_formatted_s(:time) %></p>
           <p><b>lesson duration: </b><%= lesson.duration %></p>
-          <p><b>instructor: </b><%= lesson.instructor %></p>
+          <p><b></b><% lesson.instructor %></p>
           <div class="btn-group">
             <%= link_to 'Show', user_lesson_path(current_user, lesson), class:'btn btn-outline-primary sm' %>
             <%= link_to 'Edit', edit_user_lesson_path(current_user, lesson), class:'btn btn-outline-primary sm' %>
