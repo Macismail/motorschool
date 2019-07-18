@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get 'home/index'
+  get 'home/set_cookie'
+  get 'home/show_cookie'
+  get 'home/delete_cookie'
   get 'contacts/index'
   get 'contacts/create'
 

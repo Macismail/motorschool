@@ -13,7 +13,7 @@
         </li>
         <%  end %>
 
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.email != 'admin@gmail.com' %>
         <li class="nav-item">
           <%= link_to 'lessons', user_lessons_path(current_user), class:"nav-link" %>
         </li>
