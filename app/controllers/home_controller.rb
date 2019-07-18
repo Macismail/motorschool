@@ -1,17 +1,11 @@
 class HomeController < ApplicationController
+  before_action :set_cookie
+
   def set_cookie
-    cookies[:user_name] = 'ismail'
-    cookies[:user_Id] = 4
-  end
-
-  def show_cookie
-    @user_name = cookies[:user_name]
-    @user_Id = cookies[:user_Id]
-  end
-
-  def delete_cookie
-    cookies.delete :user_name
-    cookies.delete :user_Id
+    if user_signed_in?
+      cookies[:f_name] = current_user.f_name
+      @user_f_name = cookies[:f_name]
+    end
   end
 
   def index; end

@@ -6,11 +6,11 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     # @lessons = current_user.lessons
-    @lessons = if params[:search].blank?
-                 current_user.lessons
-               else
-                 current_user.lessons.where('LOWER(full_name) LIKE ?', "%#{params[:search].downcase}%")
-               end
+    if params[:search].blank?
+      @lessons = current_user.lessons
+    else
+      @lessons = current_user.lessons.where('LOWER(full_name) LIKE ?', "%#{params[:search].downcase}%")
+    end
   end
 
   # GET /lessons/1

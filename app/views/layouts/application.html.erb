@@ -19,9 +19,11 @@
           <p><%= alert %></p>
         </div>
         <div class="col-2">
+          <% if user_signed_in? %>
           <div class="text-center">
-            <i><%= link_to @userFullName, edit_user_registration_path %></i>
+            <i><%= link_to @userDetail, edit_user_registration_path %></i>
           </div>
+          <% end %>
         </div>
       </div>
       <%= yield %>

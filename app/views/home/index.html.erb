@@ -1,3 +1,8 @@
 <div class="bg-img">
+  <% if user_signed_in? %>
+  <div class="text-center">
+    <h4> Welcome <%= @user_f_name %></h4>
+  </div>
+  <% end %>
   <%= image_tag("car.png", :alt => "car feed", class:"img-fluid") %>
 </div>

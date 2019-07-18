@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       session[:f_name] = current_user.f_name
       session[:l_name] = current_user.l_name
-      @userFullName = session[:f_name] + ' ' + session[:l_name]
+      @userDetail = session[:f_name] + ' ' + session[:l_name]
     end
   end
 end
