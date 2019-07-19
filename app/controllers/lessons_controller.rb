@@ -17,8 +17,12 @@ class LessonsController < ApplicationController
   # GET /lessons/1.json
   def show
     require 'lesson_counter'
-    @remaining_h = LessonCounter.left_hours(@lesson.n_lesson, @lesson.duration)
-    @total_p = LessonCounter.total_price(@lesson.n_lesson)
+
+    hours_rmn = LessonsDecorator.new(@lesson.n_lesson, @lesson.duration)
+    @remaining_h = hours_rmn.left_hours
+
+    total_prc = LessonsDecorator.new(@lesson.n_lesson, 0)
+    @total_p = total_prc.total_price
   end
 
   # GET /lessons/new

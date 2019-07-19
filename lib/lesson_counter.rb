@@ -1,9 +1,14 @@
-class LessonCounter
-  def self.left_hours(n1, n2)
-    result = n1 - n2
+class LessonsDecorator
+  def initialize(numLesson, duration)
+    @numLesson = numLesson
+    @duration = duration
   end
 
-  def self.total_price(n1)
-    result = n1 * 40
+  def left_hours
+    @numLesson - @duration
+  end
+
+  def total_price
+    @numLesson * 40
   end
 end
