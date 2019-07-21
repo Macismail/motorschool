@@ -18,11 +18,19 @@ class LessonsController < ApplicationController
   def show
     require 'lesson_counter'
 
+    # using decorator here to calculate the lessons remaining hours and total price
     hours_rmn = LessonsDecorator.new(@lesson.n_lesson, @lesson.duration)
     @remaining_h = hours_rmn.left_hours
 
     total_prc = LessonsDecorator.new(@lesson.n_lesson, 0)
     @total_p = total_prc.total_price
+
+    # using singleton to display information message
+    require 'singleton_file'
+
+    conf = LessonStatus.instance
+    st = conf.check_status(@remaining_h)
+    @course_status = 'This is the last lesson' if st
   end
 
   # GET /lessons/new

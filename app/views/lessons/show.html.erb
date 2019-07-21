@@ -12,6 +12,8 @@
           <%= link_to 'Back', user_lessons_path, class:'btn btn-outline-primary btn-sm' %>
         </div>
         <br><br>
+        <h4 class="notice alert-danger"><%= @course_status %></h4>
+
         <p> <b>Learner name:</b> <%= @lesson.full_name %> </p>
 
         <p> <b>User email:</b> <%= current_user.email %> </p>
