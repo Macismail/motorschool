@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
+gem 'better_errors', '~> 2.8'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap-datepicker-rails'
 gem 'devise', '~> 4.6', '>= 4.6.1'
